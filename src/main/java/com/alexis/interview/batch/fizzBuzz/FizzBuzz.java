@@ -1,4 +1,4 @@
-package com.alexis.interview.fizzBuzz;
+package com.alexis.interview.batch.fizzBuzz;
 
 import org.springframework.stereotype.Component;
 

@@ -1,4 +1,4 @@
-package com.alexis.interview.worldPopulation;
+package com.alexis.interview.batch.worldPopulation;
 
 
 import org.junit.Before;
