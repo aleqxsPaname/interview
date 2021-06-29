@@ -36,5 +36,4 @@ public class Palindrome {
         return result;
     }
 
-
 }

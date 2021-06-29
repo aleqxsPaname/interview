@@ -8,13 +8,15 @@ import java.util.List;
 @Component
 public class PrimeNumber {
 
-    public List<Integer> listPrimeNumberFrom(int starter){
+    public List<Integer> listPrimeNumberFrom(int maxNumber){
         List<Integer> results = new ArrayList<>();
-        while(starter>1){
-            if(isPrimeNumber(starter)){
-                results.add(starter);
+        if(maxNumber < 1) return results;
+        int start = 1;
+        while(start<=maxNumber){
+            if(isPrimeNumber(start)){
+                results.add(start);
             }
-            starter--;
+            start++;
         }
         System.out.println("results = " + results);
         return results;

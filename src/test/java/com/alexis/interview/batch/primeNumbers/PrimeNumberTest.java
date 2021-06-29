@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -70,7 +72,7 @@ public class PrimeNumberTest {
     }
 
     @Test
-    public void should_return_4_element(){
+    public void should_return_5_element(){
         //GIVEN
         int input = 9;
 
@@ -78,7 +80,8 @@ public class PrimeNumberTest {
         List<Integer> result = primeNumber.listPrimeNumberFrom(input);
 
         //THEN
-        assertThat(result.size()).isEqualTo(5);
+        assertThat(result).isEqualTo(new ArrayList<Integer>(
+                Arrays.asList(1, 2, 3, 5, 7)));
     }
 
 }
