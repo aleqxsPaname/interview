@@ -38,17 +38,18 @@ public class Baton {
         int min = Math.min(a,b);
         int max = Math.max(a,b);
 
-        if ((max / 4) >= min) {
-            return max / 4;
+        int total = max + min;
+
+        if (((a % 2)== 0 && (b % 2)== 0) && (total % 4)==0) {
+            return total / 4;
         }
 
-        int total = max + min;
         Set<Integer> resultats = new HashSet<>();
         for (int i = 1; i <= 4; i++) {
             resultats.add(min / i);
             resultats.add(max / i);
         }
-        Integer res = resultats.stream().filter(x->x * 4 <= total).max(Comparator.naturalOrder()).orElse(0);
+        Integer res = resultats.stream().filter(x->x * 4 < total).max(Comparator.naturalOrder()).orElse(0);
         return res;
     }
 
