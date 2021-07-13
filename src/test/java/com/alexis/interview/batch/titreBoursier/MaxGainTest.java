@@ -64,4 +64,29 @@ public class MaxGainTest {
         assertThat(maxGain).isEqualTo(90);
     }
 
+    @Test
+    public void testCalculateBenefit_given_20_25_40_3_22_shouldReturn_20() {
+        // Given
+        List<Integer> listOfCotationInDay = Arrays.asList(20, 25, 40, 3, 22);
+
+        // When
+        Integer maxGain = this.maxGain.process(listOfCotationInDay);
+        // Then
+        assertThat(maxGain).isEqualTo(20);
+    }
+
+    @Test
+    public void testCalculateMaxBenefit_given_10_9_6_14_8_42_1_shouldReturn_36() {
+        // Given
+        List<Integer> listOfCotationInDay = Arrays.asList(10, 9, 6, 14, 8, 42, 1);
+
+        // When
+        Integer maxGain = this.maxGain.process(listOfCotationInDay);
+        // Then
+        assertThat(maxGain).isEqualTo(36);
+    }
+
+
+
+
 }
